@@ -24,19 +24,27 @@ const Cursor = () => {
         );
       });
 
-      // Hover effect for <li> elements
-      const listItems = document.querySelectorAll("li");
+      const listItems = document.querySelectorAll('li');
+
       listItems.forEach((li) => {
         li.addEventListener("mouseenter", () => {
-          cursorDot.style.transform = "scale(1.5)"; // Increase size of the dot
-          cursorOutline.style.transform = "scale(2)"; // Increase size of the outline
-        });
+          cursorDot.style.width = "12px";
+          cursorDot.style.height = "12px";
+
+          cursorOutline.style.width = "57px";
+          cursorOutline.style.height = "57px";
+      
+        })
 
         li.addEventListener("mouseleave", () => {
-          cursorDot.style.transform = "scale(1)"; // Reset size of the dot
-          cursorOutline.style.transform = "scale(1)"; // Reset size of the outline
-        });
-      });
+          cursorDot.style.width = "8px";
+          cursorDot.style.height = "8px";
+
+          cursorOutline.style.width = "40px";
+          cursorOutline.style.height = "40px";
+        })
+      })
+
     }
 
     return () => {
