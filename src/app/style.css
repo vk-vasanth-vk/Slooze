@@ -1,6 +1,8 @@
 /* Import the Google font */
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
 
 body {
     cursor: none;
@@ -19,6 +21,22 @@ body {
   font-size: large;
   font-style: normal;
 }
+
+.bodoni-moda-quote {
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 70px;
+  font-style: bold;
+}
+
+/* Apply text-stroke to create hollow text effect */
+.hollow-text {
+  color: white; /* Inner color */
+  -webkit-text-stroke: 2px black; /* Border color and thickness */
+  text-stroke: 2px black; /* For non-webkit browsers */
+}
+
 
 .cursor-dot {
     width: 8px;

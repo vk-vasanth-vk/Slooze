@@ -4,25 +4,21 @@ const Cursor = () => {
   useEffect(() => {
     const cursorDot = document.querySelector("[data-cursor-dot]") as HTMLElement;
     const cursorOutline = document.querySelector("[data-cursor-outline]") as HTMLElement;
+    const product = document.getElementById("productSection");
 
     if (cursorDot && cursorOutline) {
-      window.addEventListener("mousemove", (e) => {
+      const handleMouseMove = (e: MouseEvent) => {
         const posX = e.clientX;
         const posY = e.clientY;
 
-        // Update cursor dot position
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
 
-        // Animate cursor outline position
         cursorOutline.animate(
-          {
-            left: `${posX}px`,
-            top: `${posY}px`,
-          },
+          { left: `${posX}px`, top: `${posY}px` },
           { duration: 500, fill: "forwards" }
         );
-      });
+      };
 
       const listItems = document.querySelectorAll('li');
 
@@ -45,12 +41,34 @@ const Cursor = () => {
         })
       })
 
-    }
+      window.addEventListener("mousemove", handleMouseMove);
 
-    return () => {
-      // Cleanup the event listeners
-      window.removeEventListener("mousemove", () => {});
-    };
+      if (product) {
+        const handleProductMouseEnter = () => {
+          cursorDot.style.backgroundColor = "white"; 
+          cursorOutline.style.borderColor = "white"; 
+        };
+
+        const handleProductMouseLeave = () => {
+          cursorDot.style.backgroundColor = ""; 
+          cursorOutline.style.borderColor = ""; 
+        };
+
+        product.addEventListener("mouseenter", handleProductMouseEnter);
+        product.addEventListener("mouseleave", handleProductMouseLeave);
+
+        // Cleanup for product section event listeners
+        return () => {
+          product.removeEventListener("mouseenter", handleProductMouseEnter);
+          product.removeEventListener("mouseleave", handleProductMouseLeave);
+        };
+      }
+
+      // Cleanup for mouse move listener
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+      };
+    }
   }, []);
 
   return null;
