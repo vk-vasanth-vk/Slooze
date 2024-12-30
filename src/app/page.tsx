@@ -36,13 +36,27 @@ export default function Home() {
         </nav>
       </header>
 
-      <div className="py-20 bg-gray-100 text-black flex items-center relative">
-        <div className="ml-10">
-          <h1 className="font-bold helvetica-bold text-8xl">Your Supply Chain <br /> Choreographer!!</h1> <br />
-          <h2 className="font-bold helvetica-bold text-4xl">To make supply chain as redundant as possible <br /> to build a resilient tomorrow.</h2>
+      <div className="py-20 bg-gray-100 flex flex-col relative">
+        {/* First Line: Text and SVG */}
+        <div className="flex items-center">
+          <div className="ml-10 text-black">
+            <h1 className="font-bold helvetica-bold text-8xl">Your Supply Chain <br /> Choreographer!!</h1> <br />
+            <h2 className="font-bold helvetica-bold text-4xl">To make supply chain as redundant as possible <br /> to build a resilient tomorrow.</h2>
+          </div>
+
+          <span className="ml-10">
+            <HomeSVG />
+          </span>
+        </div>
+
+        {/* Second Line: Button */}
+        <div className="mt-10 ml-80">
+          <button className="px-6 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600">
+            Get Started
+          </button>
         </div>
       </div>
-      <br />
+
 
       <div id="productSection">
         <section className="py-20">
