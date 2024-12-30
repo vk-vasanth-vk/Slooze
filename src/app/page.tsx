@@ -1,4 +1,5 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import Register from "../components/register";
 import "./style.css";
 
 export default function Home() {
@@ -23,7 +24,9 @@ export default function Home() {
           <li>
             <MagnifyingGlassIcon className="h-6 w-6 text-gray-700 cursor-pointer" />
           </li>
-            <li>Login</li>
+            <li>
+              Login
+            </li>
             <li>Sign Up</li>
           </ul>
         </nav>
