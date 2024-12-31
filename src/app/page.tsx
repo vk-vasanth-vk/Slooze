@@ -7,7 +7,6 @@ export default function Home() {
     <>
       <header className="bg-gray-100">
         <nav className="flex p-6 justify-between items-center">
-          {/* Left side: Logo and navigation */}
           <div className="flex items-center space-x-20">
             <div className="logo flex items-center">
               <img src="/slooze-logo.png" alt="logo" className="h-20" />
@@ -16,6 +15,7 @@ export default function Home() {
             <ul className="flex space-x-10 text-gray-700 newsreader-font">
               <li>Product</li>
               <li>Company</li>
+              <li>Careers</li>
               <li>Contact</li>
             </ul>
           </div>
@@ -61,39 +61,39 @@ export default function Home() {
       <div id="productSection">
         <section className="py-20">
           <h2 className="text-3xl font-bold text-center">Streamline Your Supply Chain with Slooze's AI-Powered Solutions</h2>
-          <div className="flex w-50 h-[300px] border border-white ml-10 mr-10 mt-20 mb-10">
-            <div className="basis-2/5 border border-white flex items-center justify-center">
+          <div className="flex w-50 h-[300px]  border-white ml-10 mr-10 mt-20 mb-10">
+            <div className="basis-2/5  border-white flex items-center justify-center">
               <img src="/ai-driven-insights.jpg" className="h-[250px] object-contain" alt="AI-driven insights" />
             </div>
-            <div className="basis-3/5 border border-white px-10 py-5">
+            <div className="basis-3/5 border-white px-10 py-5">
               <h2 className="text-2xl font-bold text-center">AI-Driven Insights</h2>
               <p className="text-2xl mt-5">Artificial intelligence to analyze historical data and predict future trends, such as demand fluctuations. Helps businesses plan better, reduce waste, and maintain optimal inventory levels by understanding patterns before they occur.</p>
              </div>
           </div>
-          <div className="flex w-50 h-[300px] border border-white ml-10 mr-10 mt-20 mb-10">
-            <div className="basis-3/5 border border-white px-10 py-5">
+          <div className="flex w-50 h-[300px] ml-10 mr-10 mt-20 mb-10">
+            <div className="basis-3/5 px-10 py-5">
               <h2 className="text-2xl font-bold text-center">Real-Time Tracking</h2>
               <p className="text-2xl mt-5">Up-to-the-minute data on supply chain operations, allowing businesses to monitor shipments, production status, and delivery timelines in real time. Improves decision-making and responsiveness.</p>
             </div>
-            <div className="basis-2/5 border border-white flex items-center justify-center">
+            <div className="basis-2/5 flex items-center justify-center">
               <img src="/real-time-tracking.jpg" className="h-[250px] object-contain" alt="Real-time tracking" />
             </div>
           </div>
-          <div className="flex w-50 h-[300px] border border-white ml-10 mr-10 mt-20 mb-10">
-            <div className="basis-2/5 border border-white flex items-center justify-center">
+          <div className="flex w-50 h-[300px] ml-10 mr-10 mt-20 mb-10">
+            <div className="basis-2/5 flex items-center justify-center">
               <img src="/supply-chain.jpg" className="h-[250px] object-contain" alt="supply chain" />
             </div>
-            <div className="basis-3/5 border border-white px-10 py-5">
+            <div className="basis-3/5 px-10 py-5">
               <h2 className="text-2xl font-bold text-center">End-to-End Visibility</h2>
               <p className="text-2xl mt-5">Comprehensive view of the entire supply chain, from the raw material sourcing stage to the final delivery to customers. Enhances transparency, allowing businesses to track the flow of goods, identify inefficiencies, and ensure timely deliveries.</p>
             </div>
           </div>
-          <div className="flex w-50 h-[300px] border border-white ml-10 mr-10 mt-20 mb-10">
-            <div className="basis-3/5 border border-white px-10 py-5">
+          <div className="flex w-50 h-[300px] ml-10 mr-10 mt-20 mb-10">
+            <div className="basis-3/5 px-10 py-5">
               <h2 className="text-2xl font-bold text-center">Risk Mitigation</h2>
               <p className="text-2xl mt-5">Analyzing historical data and current trends, identifies potential risks or disruptions in the supply chain, such as delays, bottlenecks, or supplier issues. Allows businesses to take proactive steps to avoid or mitigate these challenges.</p>
             </div>
-            <div className="basis-2/5 border border-white flex items-center justify-center">
+            <div className="basis-2/5 flex items-center justify-center">
               <img src="/risk-mitigation(2).avif" className="h-[250px] object-contain" alt="Risk mitigation" />
             </div>
           </div>
@@ -111,9 +111,71 @@ export default function Home() {
         <p className="text-center mt-4">Achievements and history</p>
       </section>
 
-      <footer className="py-10 bg-gray-800 text-white text-center">
-        <p>Contact Details: Email, Phone, Address</p>
+      <footer className="py-10 bg-gray-950 text-white text-center">
+        <div>
+          <div className="w-[1400px] h-[300px] mb-[50px] ml-16 flex align-center justify-around">
+            <ul>
+              <li className="text-gray-500 mb-10">Company</li>
+              <li className="mb-2">About us</li>
+              <li className="mb-2">Events</li>
+              <li className="mb-2">Newsroom</li>
+              <li className="mb-2">Careers</li>
+            </ul>
+            <ul>
+              <li className="text-gray-500 mb-10">Community</li>
+              <li className="mb-2">User Community</li>
+              <li className="mb-2">Customer Stories</li>
+              <li className="mb-2">Partnership</li>
+              <li className="mb-2">Affiliate Program</li>
+              <li className="mb-2">Documentation</li>
+            </ul>
+            <ul>
+              <li className="text-gray-500 mb-10">Learn</li>
+              <li className="mb-2">Training & Certification</li>
+              <li className="mb-2">Academy</li>
+              <li className="mb-2">Blog</li>
+              <li className="mb-2">Newsletter</li>
+            </ul>
+          </div>
+
+          <div className="w-[1400px] h-[1px] bg-white mb-10 ml-[63px]"></div>
+            <div className="w-[1400px] h-[200px] ml-[63px] flex justify-around items-start ">
+              <ul>
+                <li className="text-gray-500 mb-10">CHAT WITH US</li>
+                <li className="newsreader-font">support@slooze.com</li>
+                <li>+91-98765 43210</li>
+              </ul>
+              <ul>
+                <li className="text-gray-500 mb-10">FIND US</li>
+                <li className="newsreader-font">Slooze, Coimbatore<br />Tamil Nadu, India.</li>
+                {/* <li>India.</li> */}
+              </ul>
+              <ul>
+                <li className="text-gray-500 mb-10">FOLLOW US ON</li>
+                <li className="flex align-center"> 
+                  <img src="/linkedin.png" alt="LinkedIn" className="h-8 w-8 mr-[10px]"/> <img src="/facebook.png" alt="Facebook" className="h-8 w-8 mr-[10px]"/>
+                  <img src="/youtube.png" alt="YouTube" className="h-8 w-8 mr-[10px]"/> <img src="/instagram.png" alt="Instagram" className="h-8 w-8 mr-[10px]"/>
+                  <img src="/twitter.png" alt="X" className="h-8 w-8 mr-[10px] bg-white"/> 
+                </li>
+              </ul>
+            </div>
+            <div className="logo flex flex-col items-center justify-center w-full h-[100px]">
+              <div className="flex items-center justify-center">
+                <img src="/slooze-logo.png" alt="logo" className="h-[50px]" />
+                <h1 className="tangerine-bold text-white text-5xl">Slooze</h1>
+              </div>
+              <p className="text-center">© 2024, Slooze Corporation Pvt. Ltd. All Rights Reserved.</p>
+            </div>
+            <div className="flex justify-end mr-10">
+              <ul className="flex space-x-4">
+                <li>Privacy Policy</li>
+                <li>Contact Us</li>
+              </ul>
+            </div>
+        </div>
       </footer>
+
+
 
     </>
   );

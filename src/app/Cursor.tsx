@@ -5,7 +5,7 @@ const Cursor = () => {
     const cursorDot = document.querySelector("[data-cursor-dot]") as HTMLElement;
     const cursorOutline = document.querySelector("[data-cursor-outline]") as HTMLElement;
     const product = document.getElementById("productSection");
-    // const homeText = document.getElementById("home-text");
+    const footer = document.querySelector("footer");
 
     if (cursorDot && cursorOutline) {
       const handleMouseMove = (e: MouseEvent) => {
@@ -21,57 +21,68 @@ const Cursor = () => {
         );
       };
 
-      const listItems = document.querySelectorAll('li');
+      const handleMouseEnter = () => {
+        cursorDot.style.width = "12px";
+        cursorDot.style.height = "12px";
 
+        cursorOutline.style.width = "57px";
+        cursorOutline.style.height = "57px";
+      };
+
+      const handleMouseLeave = () => {
+        cursorDot.style.width = "8px";
+        cursorDot.style.height = "8px";
+
+        cursorOutline.style.width = "40px";
+        cursorOutline.style.height = "40px";
+      };
+
+      const handleSectionMouseEnter = () => {
+        cursorDot.style.backgroundColor = "white";
+        cursorOutline.style.borderColor = "white";
+      };
+
+      const handleSectionMouseLeave = () => {
+        cursorDot.style.backgroundColor = "";
+        cursorOutline.style.borderColor = "";
+      };
+
+      const listItems = document.querySelectorAll("li");
       listItems.forEach((li) => {
-        li.addEventListener("mouseenter", () => {
-          cursorDot.style.width = "12px";
-          cursorDot.style.height = "12px";
-
-          cursorOutline.style.width = "57px";
-          cursorOutline.style.height = "57px";
-      
-        })
-
-        li.addEventListener("mouseleave", () => {
-          cursorDot.style.width = "8px";
-          cursorDot.style.height = "8px";
-
-          cursorOutline.style.width = "40px";
-          cursorOutline.style.height = "40px";
-        })
-      })
+        li.addEventListener("mouseenter", handleMouseEnter);
+        li.addEventListener("mouseleave", handleMouseLeave);
+      });
 
       window.addEventListener("mousemove", handleMouseMove);
 
       if (product) {
-        const handleProductMouseEnter = () => {
-          cursorDot.style.backgroundColor = "white"; 
-          cursorOutline.style.borderColor = "white"; 
-        };
-
-        const handleProductMouseLeave = () => {
-          cursorDot.style.backgroundColor = ""; 
-          cursorOutline.style.borderColor = ""; 
-        };
-
-        product.addEventListener("mouseenter", handleProductMouseEnter);
-        product.addEventListener("mouseleave", handleProductMouseLeave);
-        // homeText.addEventListener("mouseenter", handleProductMouseEnter);
-        // homeText.addEventListener("mouseleave", handleProductMouseLeave);
-
-        // Cleanup for product section event listeners
-        return () => {
-          product.removeEventListener("mouseenter", handleProductMouseEnter);
-          product.removeEventListener("mouseleave", handleProductMouseLeave);
-          // homeText.removeEventListener("mouseenter", handleProductMouseEnter);
-          // homeText.removeEventListener("mouseleave", handleProductMouseLeave);
-        };
+        product.addEventListener("mouseenter", handleSectionMouseEnter);
+        product.addEventListener("mouseleave", handleSectionMouseLeave);
       }
 
-      // Cleanup for mouse move listener
+      if (footer) {
+        footer.addEventListener("mouseenter", handleSectionMouseEnter);
+        footer.addEventListener("mouseleave", handleSectionMouseLeave);
+      }
+
+      // Cleanup all event listeners
       return () => {
+        listItems.forEach((li) => {
+          li.removeEventListener("mouseenter", handleMouseEnter);
+          li.removeEventListener("mouseleave", handleMouseLeave);
+        });
+
         window.removeEventListener("mousemove", handleMouseMove);
+
+        if (product) {
+          product.removeEventListener("mouseenter", handleSectionMouseEnter);
+          product.removeEventListener("mouseleave", handleSectionMouseLeave);
+        }
+
+        if (footer) {
+          footer.removeEventListener("mouseenter", handleSectionMouseEnter);
+          footer.removeEventListener("mouseleave", handleSectionMouseLeave);
+        }
       };
     }
   }, []);
