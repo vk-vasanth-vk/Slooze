@@ -40,8 +40,8 @@ export default function Home() {
         {/* First Line: Text and SVG */}
         <div className="flex items-center">
           <div className="ml-10 text-black">
-            <h1 className="font-bold helvetica-bold text-8xl">Your Supply Chain <br /> Choreographer!!</h1> <br />
-            <h2 className="font-bold helvetica-bold text-4xl">To make supply chain as redundant as possible <br /> to build a resilient tomorrow.</h2>
+            <h1 className="font-bold helvetica-bold text-8xl" id="home-text">Your Supply Chain <br /> Choreographer!!</h1> <br />
+            <h2 className="font-bold helvetica-bold text-4xl" id="home-text">To make supply chain as redundant as possible <br /> to build a resilient tomorrow.</h2>
           </div>
 
           <span className="ml-10">
@@ -60,8 +60,31 @@ export default function Home() {
 
       <div id="productSection">
         <section className="py-20">
-          <h2 className="text-3xl font-bold text-center">About the Product</h2>
-          <p className="text-center mt-4">Highlights & advantages of the product</p>
+          <h2 className="text-3xl font-bold text-center">Streamline Your Supply Chain with Slooze's AI-Powered Solutions</h2>
+          <div className="flex w-50 h-[300px] border border-white ml-10 mr-10 mt-20 mb-10">
+            <div className="basis-2/5 border border-white">
+              
+            </div>
+            <div className="basis-3/5 border border-white">
+              
+            </div>
+          </div>
+          <div className="flex w-50 h-[300px] border border-white ml-10 mr-10 mt-20 mb-10">
+            <div className="basis-3/5 border border-white">
+
+            </div>
+            <div className="basis-2/5 border border-white">
+
+            </div>
+          </div>
+          <div className="flex w-50 h-[300px] border border-white ml-10 mr-10 mt-20 mb-10">
+            <div className="basis-2/5 border border-white">
+
+            </div>
+            <div className="basis-3/5 border border-white">
+
+            </div>
+          </div>
         </section>
       </div>
 

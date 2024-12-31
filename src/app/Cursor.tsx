@@ -5,6 +5,7 @@ const Cursor = () => {
     const cursorDot = document.querySelector("[data-cursor-dot]") as HTMLElement;
     const cursorOutline = document.querySelector("[data-cursor-outline]") as HTMLElement;
     const product = document.getElementById("productSection");
+    // const homeText = document.getElementById("home-text");
 
     if (cursorDot && cursorOutline) {
       const handleMouseMove = (e: MouseEvent) => {
@@ -56,11 +57,15 @@ const Cursor = () => {
 
         product.addEventListener("mouseenter", handleProductMouseEnter);
         product.addEventListener("mouseleave", handleProductMouseLeave);
+        // homeText.addEventListener("mouseenter", handleProductMouseEnter);
+        // homeText.addEventListener("mouseleave", handleProductMouseLeave);
 
         // Cleanup for product section event listeners
         return () => {
           product.removeEventListener("mouseenter", handleProductMouseEnter);
           product.removeEventListener("mouseleave", handleProductMouseLeave);
+          // homeText.removeEventListener("mouseenter", handleProductMouseEnter);
+          // homeText.removeEventListener("mouseleave", handleProductMouseLeave);
         };
       }
 
