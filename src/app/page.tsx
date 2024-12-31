@@ -63,38 +63,38 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center">Streamline Your Supply Chain with Slooze's AI-Powered Solutions</h2>
           <div className="flex w-50 h-[300px]  border-white ml-10 mr-10 mt-20 mb-10">
             <div className="basis-2/5  border-white flex items-center justify-center">
-              <img src="/ai-driven-insights.jpg" className="h-[250px] object-contain" alt="AI-driven insights" />
+              <img src="/ai-driven-insights.jpg" id="img" className="h-[250px] object-contain bg-white shadow-lg shadow-white rounded-md" alt="AI-driven insights" />
             </div>
-            <div className="basis-3/5 border-white px-10 py-5">
+            <div className="basis-3/5 border-white px-10 py-10">
               <h2 className="text-2xl font-bold text-center">AI-Driven Insights</h2>
               <p className="text-2xl mt-5">Artificial intelligence to analyze historical data and predict future trends, such as demand fluctuations. Helps businesses plan better, reduce waste, and maintain optimal inventory levels by understanding patterns before they occur.</p>
              </div>
           </div>
           <div className="flex w-50 h-[300px] ml-10 mr-10 mt-20 mb-10">
-            <div className="basis-3/5 px-10 py-5">
+            <div className="basis-3/5 px-10 py-12">
               <h2 className="text-2xl font-bold text-center">Real-Time Tracking</h2>
               <p className="text-2xl mt-5">Up-to-the-minute data on supply chain operations, allowing businesses to monitor shipments, production status, and delivery timelines in real time. Improves decision-making and responsiveness.</p>
             </div>
             <div className="basis-2/5 flex items-center justify-center">
-              <img src="/real-time-tracking.jpg" className="h-[250px] object-contain" alt="Real-time tracking" />
+              <img src="/real-time-tracking.jpg" id="img" className="h-[250px] object-contain bg-white shadow-lg shadow-white rounded-md" alt="Real-time tracking" />
             </div>
           </div>
           <div className="flex w-50 h-[300px] ml-10 mr-10 mt-20 mb-10">
             <div className="basis-2/5 flex items-center justify-center">
-              <img src="/supply-chain.jpg" className="h-[250px] object-contain" alt="supply chain" />
+              <img src="/supply-chain.jpg" id="img" className="h-[250px] object-contain bg-white shadow-lg shadow-white rounded-md" alt="supply chain" />
             </div>
-            <div className="basis-3/5 px-10 py-5">
+            <div className="basis-3/5 px-10 py-10">
               <h2 className="text-2xl font-bold text-center">End-to-End Visibility</h2>
               <p className="text-2xl mt-5">Comprehensive view of the entire supply chain, from the raw material sourcing stage to the final delivery to customers. Enhances transparency, allowing businesses to track the flow of goods, identify inefficiencies, and ensure timely deliveries.</p>
             </div>
           </div>
           <div className="flex w-50 h-[300px] ml-10 mr-10 mt-20 mb-10">
-            <div className="basis-3/5 px-10 py-5">
+            <div className="basis-3/5 px-10 py-10">
               <h2 className="text-2xl font-bold text-center">Risk Mitigation</h2>
               <p className="text-2xl mt-5">Analyzing historical data and current trends, identifies potential risks or disruptions in the supply chain, such as delays, bottlenecks, or supplier issues. Allows businesses to take proactive steps to avoid or mitigate these challenges.</p>
             </div>
             <div className="basis-2/5 flex items-center justify-center">
-              <img src="/risk-mitigation(2).avif" className="h-[250px] object-contain" alt="Risk mitigation" />
+              <img src="/risk-mitigation(2).avif" id="img" className="h-[250px] object-contain bg-white shadow-lg shadow-white rounded-md" alt="Risk mitigation" />
             </div>
           </div>
           <div className="mt-10 ml-[700px]">
@@ -106,10 +106,49 @@ export default function Home() {
         </section>
       </div>
 
-      <section className="py-20 bg-gray-50">
-        <h2 className="text-3xl font-bold text-center">About the Company</h2>
-        <p className="text-center mt-4">Achievements and history</p>
-      </section>
+      <div>
+        <section className="py-20 bg-gray-50">
+          <div className="w-100 h-[560px] mb-20 px-[150px] py-10">
+            <h1 className="font-bold tangerine-regular text-7xl text-gray-900">Who are we?</h1>
+            <h2 className="text-2xl text-blue-500">We’re a dynamic startup on a mission to revolutionize the Supply Chain Industry. </h2> <br />
+            <div className="flex align-center">
+              <div className="w-[700px] h-[350px]">
+                  <p className="text-2xl text-gray-900"><span className="tangerine-bold text-gray-700 text-4xl">Slooze</span> is a cutting-edge technology company dedicated to revolutionizing supply chain management. We are a team of passionate innovators, engineers, and strategists working together to simplify and enhance supply chain operations for businesses of all sizes.</p>
+                  <br/>
+                  <p className="text-2xl text-gray-900">We believe in the power of technology to solve real-world problems and are committed to building intelligent, user-friendly, and efficient solutions. Our goal is to empower businesses to achieve greater transparency, reduce costs, and drive growth with our AI-driven platform.</p>
+              </div>
+              <div className="h-[400px] w-[310px] ml-[200px]">
+              <div className="flex justify-center w-[300px] h-[300px]">
+                <img
+                  src="Slooze-founder-bg.png"
+                  className="rounded-full shadow-[0_0_15px_5px_rgba(0,0,0,0.1)]"
+                />
+              </div> <br />
+                <h1 className="text-gray-900 px-[50px] text-2xl">Harikrishna Prabhu</h1>
+                <h1 className="text-gray-900 px-[95px]">Founder & CEO</h1>
+                <h1 className="text-gray-900 px-[125px]">Slooze</h1>
+              </div>
+            </div>
+            </div>
+            <div className="w-100 h-[500px] mb-20 px-[150px] py-10">
+              <h1 className="font-bold tangerine-regular text-7xl text-gray-900">What we're doing?</h1>
+              <div className="w-[730px] h-[350px]">
+                <p className="text-2xl text-gray-900 py-5">
+                 We are revolutionizing supply chain management by leveraging AI-powered solutions to optimize operations and improve efficiency. Our platform provides real-time insights, helping businesses make smarter, data-driven decisions. 
+                 <br /><br />
+                 We focus on seamless integration with existing systems and promote sustainable practices to reduce waste and support responsible sourcing. By addressing unique business challenges, we aim to empower organizations to achieve their goals with smarter, faster, and more sustainable solutions.
+                </p>
+              </div>
+            </div>
+            <div className="w-100 h-[100px] mb-20 flex flex-col items-center justify-center">
+              <h2 className="text-black text-2xl mb-4">Empower Your Journey with Us Today!</h2>
+              <div className="w-[500px] h-[100px] px-20 py-6 flex justify-around">
+                <button className="px-6 py-3 border border-blue-500 text-black rounded-lg hover:bg-blue-500 hover:text-white">Demo</button>
+                <button className="px-6 py-3 border border-blue-500 text-black rounded-lg hover:bg-blue-500 hover:text-white">Get Started</button>
+              </div>
+            </div>
+        </section>
+      </div>
 
       <footer className="py-10 bg-gray-950 text-white text-center">
         <div>
@@ -141,7 +180,7 @@ export default function Home() {
           <div className="w-[1400px] h-[1px] bg-white mb-10 ml-[63px]"></div>
             <div className="w-[1400px] h-[200px] ml-[63px] flex justify-around items-start ">
               <ul>
-                <li className="text-gray-500 mb-10">CHAT WITH US</li>
+                <li className="text-gray-500 mb-10">CONTACT US</li>
                 <li className="newsreader-font">support@slooze.com</li>
                 <li>+91-98765 43210</li>
               </ul>
@@ -174,8 +213,6 @@ export default function Home() {
             </div>
         </div>
       </footer>
-
-
 
     </>
   );

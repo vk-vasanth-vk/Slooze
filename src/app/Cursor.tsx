@@ -6,6 +6,8 @@ const Cursor = () => {
     const cursorOutline = document.querySelector("[data-cursor-outline]") as HTMLElement;
     const product = document.getElementById("productSection");
     const footer = document.querySelector("footer");
+    const listItems = document.querySelectorAll("li");
+    const imgs = document.querySelectorAll("img");
 
     if (cursorDot && cursorOutline) {
       const handleMouseMove = (e: MouseEvent) => {
@@ -24,17 +26,25 @@ const Cursor = () => {
       const handleMouseEnter = () => {
         cursorDot.style.width = "12px";
         cursorDot.style.height = "12px";
+        cursorDot.style.backgroundColor = "#3B82F6";
+        cursorDot.style.transition = "0.2s";
 
         cursorOutline.style.width = "57px";
         cursorOutline.style.height = "57px";
+        cursorOutline.style.borderColor = "#3B82F6";
+        cursorOutline.style.transition = "0.2s";
       };
 
       const handleMouseLeave = () => {
         cursorDot.style.width = "8px";
         cursorDot.style.height = "8px";
+        cursorDot.style.backgroundColor = "";
+        cursorDot.style.transition = "";
 
         cursorOutline.style.width = "40px";
         cursorOutline.style.height = "40px";
+        cursorOutline.style.borderColor = "";
+        cursorOutline.style.transition = "";
       };
 
       const handleSectionMouseEnter = () => {
@@ -47,7 +57,7 @@ const Cursor = () => {
         cursorOutline.style.borderColor = "";
       };
 
-      const listItems = document.querySelectorAll("li");
+
       listItems.forEach((li) => {
         li.addEventListener("mouseenter", handleMouseEnter);
         li.addEventListener("mouseleave", handleMouseLeave);
@@ -65,12 +75,31 @@ const Cursor = () => {
         footer.addEventListener("mouseleave", handleSectionMouseLeave);
       }
 
+      imgs.forEach((img) => {
+        img.addEventListener("mouseenter", () => {
+          img.style.height = "270px";
+          img.style.transition = "1s";
+        });
+      })
+
+      imgs.forEach((img) => {
+        img.addEventListener("mouseleave", () => {
+          img.style.height = "";
+          img.style.transition = "1s";
+        });
+      })
+
       // Cleanup all event listeners
       return () => {
         listItems.forEach((li) => {
           li.removeEventListener("mouseenter", handleMouseEnter);
           li.removeEventListener("mouseleave", handleMouseLeave);
         });
+
+        imgs.forEach((img) => {
+          img.removeEventListener("mouseenter", ()=>{});
+          img.removeEventListener("mouseleave", ()=>{});
+        })
 
         window.removeEventListener("mousemove", handleMouseMove);
 
