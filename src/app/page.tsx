@@ -36,22 +36,25 @@ export default function Home() {
         </nav>
       </header>
 
-      <div className="py-20 bg-gray-100 flex flex-col relative">
+      <div className="py-15 bg-gray-100 flex flex-col relative">
         {/* First Line: Text and SVG */}
         <div className="flex items-center">
-          <div className="ml-10 text-black">
+          <div className="ml-10 mr-[100px] text-black">
             <h1 className="font-bold helvetica-bold text-8xl" id="home-text">Your Supply Chain <br /> Choreographer!!</h1> <br />
             <h2 className="font-bold helvetica-bold text-4xl" id="home-text">To make supply chain as redundant as possible <br /> to build a resilient tomorrow.</h2>
           </div>
 
-          <span className="ml-10">
+          <div className="w-[450px] h-[450px]">
             <HomeSVG />
-          </span>
+          </div>
         </div>
 
         {/* Second Line: Button */}
-        <div className="mt-10 ml-80">
-          <button className="px-6 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-black">
+        <div className="mt-2 ml-80">
+          {/* <button className="px-6 py-3 mr-[70px] bg-blue-500 text-white font-bold rounded-lg hover:bg-black transition duration-1000">
+            Demo
+          </button> */}
+          <button className="px-6 py-3 mb-[50px] bg-blue-500 text-white font-bold rounded-lg hover:bg-black transition duration-1000">
             Get Started
           </button>
         </div>
@@ -98,7 +101,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-10 ml-[700px]">
-            <button className="px-6 py-3 border border-blue-500 text-white font-bold rounded-lg hover:bg-blue-600">
+            <button className="px-6 py-3 border border-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition duration-1000">
               Learn more
             </button>
           </div>
@@ -143,8 +146,8 @@ export default function Home() {
             <div className="w-100 h-[100px] mb-20 flex flex-col items-center justify-center">
               <h2 className="text-black text-2xl mb-4">Empower Your Journey with Us Today!</h2>
               <div className="w-[500px] h-[100px] px-20 py-6 flex justify-around">
-                <button className="px-6 py-3 border border-blue-500 text-black rounded-lg hover:bg-blue-500 hover:text-white">Demo</button>
-                <button className="px-6 py-3 border border-blue-500 text-black rounded-lg hover:bg-blue-500 hover:text-white">Get Started</button>
+                <button className="px-6 py-3 border border-blue-500 text-black rounded-lg hover:bg-blue-500 hover:text-white transition duration-1000">Demo</button>
+                <button className="px-6 py-3 border border-blue-500 text-black rounded-lg hover:bg-blue-500 hover:text-white transition duration-1000">Get Started</button>
               </div>
             </div>
         </section>
@@ -187,7 +190,6 @@ export default function Home() {
               <ul>
                 <li className="text-gray-500 mb-10">FIND US</li>
                 <li className="newsreader-font">Slooze, Coimbatore<br />Tamil Nadu, India.</li>
-                {/* <li>India.</li> */}
               </ul>
               <ul>
                 <li className="text-gray-500 mb-10">FOLLOW US ON</li>
