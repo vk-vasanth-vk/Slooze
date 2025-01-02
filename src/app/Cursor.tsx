@@ -46,9 +46,7 @@ const Cursor = () => {
       cursorDot.style.width = "12px";
       cursorDot.style.height = "12px";
       cursorDot.style.transition = "0.2s";
-      cursorDot.style.backgroundColor = "#3B82F6"; // Change color to #3B82F6
 
-      cursorOutline.style.borderColor = "#3B82F6"; // Change outline color to #3B82F6
       cursorOutline.style.width = "57px";
       cursorOutline.style.height = "57px";
       cursorOutline.style.transition = "0.2s";
