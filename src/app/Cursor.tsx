@@ -85,9 +85,11 @@ const Cursor = () => {
     });
 
     imgs.forEach((img) => {
-      img.addEventListener("mouseenter", () => handleImageMouseEnter(img));
-      img.addEventListener("mouseleave", () => handleImageMouseLeave(img));
+      const htmlImg = img as HTMLElement; // Explicitly cast to HTMLElement
+      htmlImg.addEventListener("mouseenter", () => handleImageMouseEnter(htmlImg));
+      htmlImg.addEventListener("mouseleave", () => handleImageMouseLeave(htmlImg));
     });
+    
 
     window.addEventListener("mousemove", handleMouseMove);
 
@@ -104,8 +106,9 @@ const Cursor = () => {
       });
 
       imgs.forEach((img) => {
-        img.removeEventListener("mouseenter", () => handleImageMouseEnter(img));
-        img.removeEventListener("mouseleave", () => handleImageMouseLeave(img));
+        const htmlImg = img as HTMLElement;
+        htmlImg.removeEventListener("mouseenter", () => handleImageMouseEnter(htmlImg));
+        htmlImg.removeEventListener("mouseleave", () => handleImageMouseLeave(htmlImg));
       });
 
       window.removeEventListener("mousemove", handleMouseMove);
