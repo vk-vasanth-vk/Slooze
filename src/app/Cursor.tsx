@@ -4,11 +4,22 @@ const Cursor = () => {
   useEffect(() => {
     const cursorDot = document.querySelector("[data-cursor-dot]") as HTMLElement;
     const cursorOutline = document.querySelector("[data-cursor-outline]") as HTMLElement;
-    const product = document.querySelector(".productSection");
+    const productSection = document.querySelector(".productSection");
     const footer = document.querySelector("footer");
     const listItems = document.querySelectorAll("li");
     const imgs = document.querySelectorAll(".productSection img");
     const btns = document.querySelectorAll("button");
+
+    const isCursorInSection = (cursorX: number, cursorY: number, section: Element | null) => {
+      if (!section) return false;
+      const rect = section.getBoundingClientRect();
+      return (
+        cursorX >= rect.left &&
+        cursorX <= rect.right &&
+        cursorY >= rect.top &&
+        cursorY <= rect.bottom
+      );
+    };
 
     const handleMouseMove = (e: MouseEvent) => {
       const posX = e.clientX;
@@ -21,40 +32,38 @@ const Cursor = () => {
         { left: `${posX}px`, top: `${posY}px` },
         { duration: 500, fill: "forwards" }
       );
+
+      if (isCursorInSection(posX, posY, productSection) || isCursorInSection(posX, posY, footer)) {
+        cursorDot.style.backgroundColor = "white";
+        cursorOutline.style.borderColor = "white";
+      } else {
+        cursorDot.style.backgroundColor = "black";
+        cursorOutline.style.borderColor = "black";
+      }
     };
 
     const handleMouseEnter = () => {
       cursorDot.style.width = "12px";
       cursorDot.style.height = "12px";
-      cursorDot.style.backgroundColor = "#3B82F6";
       cursorDot.style.transition = "0.2s";
+      cursorDot.style.backgroundColor = "#3B82F6"; // Change color to #3B82F6
 
+      cursorOutline.style.borderColor = "#3B82F6"; // Change outline color to #3B82F6
       cursorOutline.style.width = "57px";
       cursorOutline.style.height = "57px";
-      cursorOutline.style.borderColor = "#3B82F6";
       cursorOutline.style.transition = "0.2s";
     };
 
     const handleMouseLeave = () => {
       cursorDot.style.width = "8px";
       cursorDot.style.height = "8px";
-      cursorDot.style.backgroundColor = "";
       cursorDot.style.transition = "";
+      cursorDot.style.backgroundColor = "black"; // Revert to original color
 
+      cursorOutline.style.borderColor = "black"; // Revert outline to original color
       cursorOutline.style.width = "40px";
       cursorOutline.style.height = "40px";
-      cursorOutline.style.borderColor = "";
       cursorOutline.style.transition = "";
-    };
-
-    const handleSectionMouseEnter = () => {
-      cursorDot.style.backgroundColor = "white";
-      cursorOutline.style.borderColor = "white";
-    };
-
-    const handleSectionMouseLeave = () => {
-      cursorDot.style.backgroundColor = "";
-      cursorOutline.style.borderColor = "";
     };
 
     const handleImageMouseEnter = (img: HTMLElement) => {
@@ -84,20 +93,7 @@ const Cursor = () => {
 
     window.addEventListener("mousemove", handleMouseMove);
 
-    if (product) {
-      product.addEventListener("mouseenter", handleSectionMouseEnter);
-      product.addEventListener("mouseleave", handleSectionMouseLeave);
-    }
-
-    if (footer) {
-      footer.addEventListener("mouseenter", () => {
-        cursorDot.style.backgroundColor = "white";
-        cursorOutline.style.borderColor = "white";
-      });
-      footer.addEventListener("mouseleave", handleSectionMouseLeave);
-    }
-
-    // Cleanup all event listeners
+    // Cleanup
     return () => {
       listItems.forEach((li) => {
         li.removeEventListener("mouseenter", handleMouseEnter);
@@ -115,16 +111,6 @@ const Cursor = () => {
       });
 
       window.removeEventListener("mousemove", handleMouseMove);
-
-      if (product) {
-        product.removeEventListener("mouseenter", handleSectionMouseEnter);
-        product.removeEventListener("mouseleave", handleSectionMouseLeave);
-      }
-
-      if (footer) {
-        footer.removeEventListener("mouseenter", handleSectionMouseEnter);
-        footer.removeEventListener("mouseleave", handleSectionMouseLeave);
-      }
     };
   }, []);
 

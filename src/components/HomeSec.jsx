@@ -4,7 +4,7 @@ import HomeSVG from "./HomeSVG";
 const HomeSec = () => {
   return (
     <>
-      <div className="py-15 bg-gray-100 flex flex-col relative">
+      <div className="py-15 bg-gray-100 flex flex-col relative homeSec">
         {/* First Line: Text and SVG */}
         <div className="flex items-center">
           <div className="ml-10 mr-[100px] text-black">

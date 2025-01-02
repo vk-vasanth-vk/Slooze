@@ -178,3 +178,20 @@ li:hover {
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.block {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
