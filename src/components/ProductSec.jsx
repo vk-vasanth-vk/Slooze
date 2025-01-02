@@ -3,7 +3,7 @@ import React from 'react'
 const ProductSec = () => {
   return (
     <>
-      <div id="productSection">
+      <div className="productSection">
         <section className="py-20">
           <h2 className="text-3xl font-bold text-center">Streamline Your Supply Chain with Slooze's AI-Powered Solutions</h2>
           <div className="flex w-50 h-[300px]  border-white ml-10 mr-10 mt-20 mb-10">
@@ -43,7 +43,7 @@ const ProductSec = () => {
             </div>
           </div>
           <div className="mt-10 ml-[700px]">
-            <button className="px-6 py-3 border border-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition duration-1000">
+            <button className="px-6 py-3 border border-white glow-on-hover">
               Learn more
             </button>
           </div>

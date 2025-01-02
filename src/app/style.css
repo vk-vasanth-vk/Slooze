@@ -64,3 +64,117 @@ li:hover {
   cursor: none;
 }
 
+.menu {
+  list-style: none;
+  display: flex;
+}
+
+.menu li {
+  position: relative; /* To position the underline */
+  cursor: pointer;
+}
+
+.menu li::after {
+  content: ""; /* Empty content for the underline */
+  position: absolute;
+  bottom: -2px; /* Position the underline below the text */
+  left: 0;
+  width: 100%; /* Full width for the underline */
+  height: 2px;
+  background-color: #3B82F6; /* Color of the underline */
+  transform: scaleX(0); /* Start with the underline hidden */
+  transform-origin: left; /* Animate starting from the left */
+  transition: transform 0.3s ease-in-out; /* Smooth animation */
+}
+
+.menu li:hover::after {
+  transform: scaleX(1); /* Expand underline on hover */
+  transform-origin: left; /* Keep the origin on the left */
+}
+
+.menu li::after {
+  transform: scaleX(0); /* Reset to disappear to the right */
+  transform-origin: right; /* Disappear to the right */
+}
+
+
+.text-animation {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #000;
+  opacity: 0; /* Initially invisible */
+  transform: translateY(100px); /* Start 100px below */
+  animation: fadeInUp 1.5s ease-out forwards; /* 3s animation */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0; /* Fully transparent */
+    transform: translateY(40px); /* 100px below */
+  }
+
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Final position */
+  }
+}
+
+.glow-on-hover {
+  width: 180px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}

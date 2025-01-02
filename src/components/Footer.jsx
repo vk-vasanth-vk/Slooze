@@ -5,13 +5,13 @@ const Footer = () => {
     <>
       <footer className="py-10 bg-gray-950 text-white text-center">
         <div>
-          <div className="w-[1400px] h-[300px] mb-[50px] ml-16 flex align-center justify-around">
+          <div className="w-[1400px] h-[300px] mb-[50px] ml-16 flex align-center justify-around menu">
             <ul>
               <li className="text-gray-500 mb-10">Company</li>
-              <li className="mb-2">About us</li>
-              <li className="mb-2">Events</li>
-              <li className="mb-2">Newsroom</li>
-              <li className="mb-2">Careers</li>
+                <li className="mb-2">About us</li>
+                <li className="mb-2">Events</li>
+                <li className="mb-2">Newsroom</li>
+                <li className="mb-2">Careers</li>
             </ul>
             <ul>
               <li className="text-gray-500 mb-10">Community</li>
@@ -34,8 +34,8 @@ const Footer = () => {
             <div className="w-[1400px] h-[200px] ml-[63px] flex justify-around items-start ">
               <ul>
                 <li className="text-gray-500 mb-10">CONTACT US</li>
-                <li className="newsreader-font">support@slooze.com</li>
-                <li>+91-98765 43210</li>
+                  <li className="newsreader-font">support@slooze.com</li>
+                  <li>+91-98765 43210</li>
               </ul>
               <ul>
                 <li className="text-gray-500 mb-10">FIND US</li>

@@ -8,7 +8,7 @@ const HomeSec = () => {
         {/* First Line: Text and SVG */}
         <div className="flex items-center">
           <div className="ml-10 mr-[100px] text-black">
-            <h1 className="font-bold helvetica-bold text-8xl" id="home-text">Your Supply Chain <br /> Choreographer!!</h1> <br />
+            <h1 className="font-bold helvetica-bold text-8xl text-animation" id="home-text">Your Supply Chain <br /> Choreographer!!</h1> <br />
             <h2 className="font-bold helvetica-bold text-4xl" id="home-text">To make supply chain as redundant as possible <br /> to build a resilient tomorrow.</h2>
           </div>
 

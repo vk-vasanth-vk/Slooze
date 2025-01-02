@@ -11,7 +11,7 @@ const NavBar = () => {
                     <img src="/slooze-logo.png" alt="logo" className="h-20" />
                     <h1 className="tangerine-bold text-gray-700 text-5xl">Slooze</h1>
                     </div>
-                    <ul className="flex space-x-10 text-gray-700 newsreader-font">
+                    <ul className="flex space-x-10 text-gray-700 newsreader-font menu">
                     <li>Product</li>
                     <li>Company</li>
                     <li>Careers</li>
@@ -24,12 +24,14 @@ const NavBar = () => {
                     <li>
                         <MagnifyingGlassIcon className="h-6 w-6 text-gray-700 cursor-pointer" />
                     </li>
-                    <li>
-                        Login
-                    </li>
-                    <li>
-                        Sign up
-                    </li>
+                    <div className='menu'>
+                        <li className='mr-10'>
+                            Login
+                        </li>
+                        <li>
+                            Sign up
+                        </li>
+                    </div>
                     </ul>
                 </div>
                 </nav>
